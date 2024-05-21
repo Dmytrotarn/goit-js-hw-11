@@ -1,3 +1,4 @@
+'use strict'
 const API_KEY = "43985824-437e417885fe4ca625fa28e08"
 const BASE_URL = "https://pixabay.com/api/"
 
