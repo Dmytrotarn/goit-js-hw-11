@@ -8,6 +8,9 @@ export function getSearchResults(search) {
     const searchParams = new URLSearchParams({
         key: API_KEY,
         q: search,
+        image_type: 'photo',
+        orientation: 'horizontal',
+        safesearch: true,
     });
 
     return fetch(`${BASE_URL}?${searchParams}`)
