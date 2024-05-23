@@ -26,7 +26,9 @@ function handleSearch(e) {
     if (searchValue === '') {
         iziToast.error({
             message: 'Input field can not be empty',
-            position: "topRight"
+            position: "topRight",
+            // timeout: false,
+            displayMode: 2,
         })
         search.value = ''
         gallery.innerHTML = ''
@@ -36,14 +38,15 @@ function handleSearch(e) {
     load.classList.remove('is-hidden')
 
 
-
     getSearchResults(searchValue)
         .then((data) => {
             if (data.total === 0) {                             //нічого не знайдено
                 iziToast.show({
                     message: '"Sorry, there are no images matching your search query. Please try again!"',
                     color: 'blue',
-                    position: 'topRight'
+                    position: 'topRight',
+                    // timeout: false,
+                    displayMode: 2
                 })
                 load.classList.add('is-hidden')
                 gallery.innerHTML = ''
@@ -61,6 +64,7 @@ function handleSearch(e) {
             search.value = ''
             load.classList.add('is-hidden')
         })
+    // iziToast.destroy()
 }
 
 
