@@ -7,7 +7,6 @@ import { renderImages } from './js/render-functions'
 
 
 const search = document.querySelector('.search-input')
-const button = document.querySelector('.search-btn')
 const gallery = document.querySelector('.gallery')
 const load = document.querySelector('.loader')
 const form = document.querySelector('.form')
