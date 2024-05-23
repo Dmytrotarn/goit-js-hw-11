@@ -10,13 +10,14 @@ const search = document.querySelector('.search-input')
 const button = document.querySelector('.search-btn')
 const gallery = document.querySelector('.gallery')
 const load = document.querySelector('.loader')
+const form = document.querySelector('.form')
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
 });
 
-button.addEventListener('click', handleSearch)
+form.addEventListener('submit', handleSearch)
 
 function handleSearch(e) {
     e.preventDefault()
@@ -29,6 +30,7 @@ function handleSearch(e) {
             position: "topRight"
         })
         search.value = ''
+        gallery.innerHTML = ''
         return
     }
 
@@ -45,6 +47,7 @@ function handleSearch(e) {
                     position: 'topRight'
                 })
                 load.classList.add('is-hidden')
+                gallery.innerHTML = ''
                 return
             }
 
@@ -60,3 +63,6 @@ function handleSearch(e) {
             load.classList.add('is-hidden')
         })
 }
+
+
+
